@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="title">OnYourMind</h2>
+    
+    <mat-form-field>
+        <input matInput type="text" placeholder="Username" [(ngModel)]="username" />
+    </mat-form-field>
+    
+    <br />
+    
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="password" />
+    </mat-form-field>
+    
+    <br />
+    
+    <button mat-button (click)="onClickRegister()" class="button">
+        Register
+    </button>
+    
+    <button mat-raised-button color="primary" (click)="onClickLogin()" class="button">
+        Login
+    </button>
+</div>
