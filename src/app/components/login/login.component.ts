@@ -1,4 +1,4 @@
-import { USER_ROLE_KEY, USERNAME_KEY, USER_TOKEN } from './../../config/local-storage-keys';
+import { USER_ROLE_KEY, USERNAME_KEY, USER_TOKEN_KEY } from './../../config/local-storage-keys';
 import { HOME_PATH } from './../../config/router-paths';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { REGISTRATION_PATH } from 'src/app/config/router-paths';
 import { USER_ID_KEY } from 'src/app/config/local-storage-keys';
 import { LoginInfo } from 'src/app/models/login-info';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,9 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
 
-  constructor(public router: Router, private authService: AuthService) { 
+  constructor(public router: Router, 
+              private authService: AuthService, 
+              private toastr: ToastrService) { 
   }
 
   ngOnInit() {
@@ -37,12 +40,11 @@ export class LoginComponent implements OnInit {
       localStorage.setItem(USER_ID_KEY, data.id);
       localStorage.setItem(USER_ROLE_KEY, data.authorities[0]);
       localStorage.setItem(USERNAME_KEY, data.username);
-      localStorage.setItem(USER_TOKEN, data.token.accessToken);
+      localStorage.setItem(USER_TOKEN_KEY, data.token.accessToken);
 
       this.router.navigate([HOME_PATH]);
     }, error => {
-      // @TODO: add toast message
-      console.log('error  while loggin in');
+      this.toastr.warning(error.error.message, 'Warning');
     });
   }
 
