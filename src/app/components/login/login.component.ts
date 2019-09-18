@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { REGISTRATION_PATH } from 'src/app/config/router-paths';
 import { USER_ID_KEY } from 'src/app/config/local-storage-keys';
+import { LoginInfo } from 'src/app/models/login-info';
 
 @Component({
   selector: 'app-login',
@@ -30,19 +31,18 @@ export class LoginComponent implements OnInit {
   }
 
   onClickLogin() {
-    const loginInfo = {
-      username: this.username,
-      password: this.password
-    };
-    
+    const loginInfo = new LoginInfo(this.username, this.password);
+
     this.authService.login(loginInfo).subscribe(data => {
-      // @TODO: refactor this!! create models
       localStorage.setItem(USER_ID_KEY, data.id);
       localStorage.setItem(USER_ROLE_KEY, data.authorities[0]);
       localStorage.setItem(USERNAME_KEY, data.username);
       localStorage.setItem(USER_TOKEN, data.token.accessToken);
 
       this.router.navigate([HOME_PATH]);
+    }, error => {
+      // @TODO: add toast message
+      console.log('error  while loggin in');
     });
   }
 
