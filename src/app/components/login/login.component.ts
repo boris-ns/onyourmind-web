@@ -24,13 +24,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.checkIfUserLoggedIn()) {
+    if (this.authService.isUserLoggedIn()) {
       this.router.navigate([HOME_PATH]);
     }
-  }
-
-  checkIfUserLoggedIn() {
-    return localStorage.getItem(USER_ID_KEY) != null;
   }
 
   onClickLogin() {

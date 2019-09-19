@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
+    ToolbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="title" (click)="onTitleClick()">
+            ON<strong>YOUR</strong>MIND
+        </span>
+
+        <ng-template [ngIf]="isUserLoggedIn()" [ngIfElse]="nonRegisteredUser">
+
+            <button mat-button class="button" (click)="onClickPosts()">Posts</button>
+
+            <ng-template [ngIf]="isAdminLoggedIn()">
+                <button mat-button class="button" (click)="onClickComments()">Comments</button>
+                <button mat-button class="button" (click)="onClickUsers()">Users</button>
+            </ng-template>
+
+            <span class="spacer"></span>
+
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>settings_applications</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>note</mat-icon>
+                    <span>My posts</span>
+                </button>
+
+                <button mat-menu-item>
+                    <mat-icon>comment</mat-icon>
+                    <span>My comments</span>
+                </button>
+                
+                <button mat-menu-item>
+                    <mat-icon>perm_identity</mat-icon>
+                    <span>Profile settings</span>
+                </button>
+                
+                <button mat-menu-item>
+                    <mat-icon>input</mat-icon>
+                    <span>Logout</span>
+                </button>
+            </mat-menu>
+
+        </ng-template>
+        
+        <ng-template #nonRegisteredUser>
+            <span class="spacer"></span>
+
+            <button mat-button class="button" (click)="onClickRegister()">
+                Register
+            </button>
+            
+            <button mat-raised-button class="button" (click)="onClickLogin()">
+                Login
+            </button>
+        </ng-template>
+    </mat-toolbar-row>
+</mat-toolbar>
