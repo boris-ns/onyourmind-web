@@ -1,4 +1,4 @@
-import { LOGIN_PATH } from './../../config/router-paths';
+import { LOGIN_PATH, HOME_PATH } from './../../config/router-paths';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
@@ -26,6 +26,10 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.authService.isUserLoggedIn()) {
+      this.toastr.warning('Please logout if you want to create new account.', 'Warning');
+      this.router.navigate([HOME_PATH]);
+    }
   }
 
   onClickRegister() {

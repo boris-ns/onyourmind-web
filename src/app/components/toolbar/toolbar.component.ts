@@ -1,3 +1,4 @@
+import { USERNAME_KEY } from './../../config/local-storage-keys';
 import { LOGIN_PATH, REGISTRATION_PATH, HOME_PATH } from './../../config/router-paths';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,6 +16,10 @@ export class ToolbarComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  getUsername(): string {
+    return localStorage.getItem(USERNAME_KEY);
   }
 
   isUserLoggedIn(): boolean {
@@ -47,5 +52,10 @@ export class ToolbarComponent implements OnInit {
 
   onClickUsers(): void {
     // @TODO: implement this
+  }
+
+  onClickLogout(): void {
+    this.authService.logout();
+    this.router.navigate([HOME_PATH]);
   }
 }

@@ -1,4 +1,4 @@
-import { USER_ROLE_KEY } from './../config/local-storage-keys';
+import { USER_ROLE_KEY, USER_TOKEN_KEY, USERNAME_KEY } from './../config/local-storage-keys';
 import { USER_ID_KEY } from 'src/app/config/local-storage-keys';
 import { API_LOGIN, API_REGISTER_USER } from './../config/api-paths';
 import { Injectable } from '@angular/core';
@@ -30,5 +30,12 @@ export class AuthService {
 
   registerUser(userInfo: User): Observable<any> {
     return this.http.post(API_REGISTER_USER, userInfo);
+  }
+
+  logout(): void {
+    localStorage.removeItem(USER_ID_KEY);
+    localStorage.removeItem(USER_ROLE_KEY);
+    localStorage.removeItem(USERNAME_KEY);
+    localStorage.removeItem(USER_TOKEN_KEY);
   }
 }

@@ -10,3 +10,7 @@
 .title:hover {
     cursor: pointer;
 }
+
+.btnUsername {
+    margin-right: 10px;
+}

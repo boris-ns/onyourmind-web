@@ -16,6 +16,7 @@
             <span class="spacer"></span>
 
             <button mat-button [matMenuTriggerFor]="menu">
+                <span class="btnUsername">{{ getUsername() }}</span>
                 <mat-icon>settings_applications</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
@@ -34,7 +35,7 @@
                     <span>Profile settings</span>
                 </button>
                 
-                <button mat-menu-item>
+                <button mat-menu-item (click)="onClickLogout()">
                     <mat-icon>input</mat-icon>
                     <span>Logout</span>
                 </button>
