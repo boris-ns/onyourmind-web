@@ -15,6 +15,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { UsersComponent } from './components/users/users.component';
 import { AddTokenInterceptor } from './config/http-interceptor';
+import { AdminPostsComponent } from './components/admin-posts/admin-posts.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AddTokenInterceptor } from './config/http-interceptor';
     RegistrationComponent,
     ToolbarComponent,
     UsersComponent,
+    AdminPostsComponent,
   ],
   imports: [
     BrowserModule,
