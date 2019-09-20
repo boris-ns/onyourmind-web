@@ -1,6 +1,9 @@
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { MatTableDataSource } from '@angular/material';
+import { ROLE_ADMIN } from 'src/app/config/user-roles-keys';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-users',
@@ -9,8 +12,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UsersComponent implements OnInit {
 
-  users: Array<any> = [];
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'username', 'email', 'enabled'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'username', 'email', 'role', 'enabled'];
+  users = new MatTableDataSource([]);
 
   constructor(private userService: UserService,
               private toastr: ToastrService) { 
@@ -22,10 +25,18 @@ export class UsersComponent implements OnInit {
 
   getUsers(): void {
     this.userService.getAllUsers().subscribe(data => {
-      this.users = data;
+      this.users = new MatTableDataSource(data);
     }, error => {
       this.toastr.warning('There was an error while getting data about users.', 'Warning');
     })
+  }
+
+  getUserRole(user: User): string {
+    return (user.authorities[0] === ROLE_ADMIN) ? 'Admin' : 'User';
+  }
+
+  applyFilter(filterValue: string) {
+    this.users.filter = filterValue.trim().toLowerCase();
   }
 
   onEnableSlideToggleChange(user): void {

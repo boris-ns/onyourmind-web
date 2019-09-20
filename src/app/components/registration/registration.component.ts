@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
       return;
     }
 
-    const userInfo = new User(this.username, this.firstName, this.lastName, this.password, this.email);
+    const userInfo = new User(this.username, this.firstName, this.lastName, this.password, this.email, []);
 
     this.authService.registerUser(userInfo).subscribe(data => {
       this.toastr.success('You account is successfully created! Please sign in.');
