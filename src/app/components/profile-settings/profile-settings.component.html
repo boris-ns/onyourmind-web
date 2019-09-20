@@ -1,0 +1,65 @@
+<div class="container">
+
+        <div class="image-container">
+            <img class="profile-image"
+                src="../../../assets/images/default-profile.png" 
+                alt="../../../assets/images/default-profile.png"
+            />
+        </div>
+    
+        <div class="user-info-container">
+            <div class="user-info-container-row">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-icon matPrefix class="icon">perm_identity</mat-icon>
+                    <input matInput type="text" placeholder="First name" disabled [(ngModel)]="user.firstName" />
+                </mat-form-field>
+    
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-icon matPrefix class="icon">perm_identity</mat-icon>
+                    <input matInput type="text" placeholder="Last name" disabled [(ngModel)]="user.lastName" />
+                </mat-form-field>
+            </div>
+            
+            <div class="user-info-container-row ">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-icon matPrefix class="icon">account_circle</mat-icon>
+                    <input matInput type="text" placeholder="Username" disabled [(ngModel)]="user.username" />
+                </mat-form-field>
+        
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-icon matPrefix class="icon">email</mat-icon>
+                    <input matInput type="email" placeholder="E-mail" disabled [(ngModel)]="user.email" />
+                </mat-form-field>
+            </div>
+    
+            <div class="user-info-container-row">
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-icon matPrefix class="icon">lock</mat-icon>
+                    <input matInput type="password" placeholder="Password" disabled [(ngModel)]="password" />
+                </mat-form-field>
+        
+                <mat-form-field class="input-field" appearance="outline">
+                    <mat-icon matPrefix class="icon">lock</mat-icon>
+                    <input matInput type="password" placeholder="Repeat password" disabled [(ngModel)]="repeatPassword" />
+                </mat-form-field>
+            </div>
+    
+            <div class="user-info-container-row">
+                <button mat-raised-button color="primary">
+                    Edit
+                </button>
+        
+                <br />
+        
+                <button mat-button>
+                    Cancel
+                </button>
+        
+                <button mat-raised-button color="primary">
+                    Save
+                </button>
+            </div>
+    
+        </div>
+    
+    </div>

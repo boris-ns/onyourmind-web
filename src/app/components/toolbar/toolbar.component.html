@@ -38,7 +38,7 @@
                 <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item>
+                <button mat-menu-item (click)="onClickMyProfile()">
                     <mat-icon>perm_identity</mat-icon>
                     <span>My profile</span>
                 </button>
@@ -51,11 +51,6 @@
                 <button mat-menu-item>
                     <mat-icon>comment</mat-icon>
                     <span>My comments</span>
-                </button>
-                
-                <button mat-menu-item>
-                    <mat-icon>settings_application</mat-icon>
-                    <span>Profile settings</span>
                 </button>
                 
                 <button mat-menu-item (click)="onClickLogout()">
