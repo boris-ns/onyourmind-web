@@ -1,9 +1,11 @@
+import { PROFILES_PATH } from './../../config/router-paths';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { MatTableDataSource } from '@angular/material';
 import { ROLE_ADMIN } from 'src/app/config/user-roles-keys';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -12,11 +14,12 @@ import { User } from 'src/app/models/user';
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'username', 'email', 'role', 'enabled'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'username', 'email', 'role', 'enabled', 'see-profile'];
   users = new MatTableDataSource([]);
 
   constructor(private userService: UserService,
-              private toastr: ToastrService) { 
+              private toastr: ToastrService,
+              private router: Router) { 
   }
 
   ngOnInit() {
@@ -55,5 +58,9 @@ export class UsersComponent implements OnInit {
         this.toastr.warning(`There was an error while activating account for ${user.firstName} ${user.lastName}`, 'Warning');
       })
     }
+  }
+
+  goToUsersProfile(userId: number): void {
+    this.router.navigate([PROFILES_PATH, userId]);
   }
 }

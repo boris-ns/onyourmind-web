@@ -6,3 +6,5 @@ export const ADMIN_USERS_PATH = 'admin/users';
 export const ADMIN_POSTS_PATH = 'admin/posts';
 export const ADMIN_COMMENTS_PATH = 'admin/comments';
 export const MY_PROFILE_PATH = 'my-profile';
+export const PROFILES_PATH = 'profile';
+export const PROFILES_PATH_PARAMS = 'profile/:id';

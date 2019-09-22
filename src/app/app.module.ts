@@ -17,6 +17,7 @@ import { UsersComponent } from './components/users/users.component';
 import { AddTokenInterceptor } from './config/http-interceptor';
 import { AdminPostsComponent } from './components/admin-posts/admin-posts.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProfileSettingsComponent } from './components/profile-settings/profile-
     UsersComponent,
     AdminPostsComponent,
     ProfileSettingsComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

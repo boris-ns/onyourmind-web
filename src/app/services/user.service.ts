@@ -22,6 +22,10 @@ export class UserService {
     return this.http.get(API_USERS);
   }
 
+  getUser(userId: number): Observable<any> {
+    return this.http.get(`${API_GET_USER}/${userId}`);
+  }
+
   deactivateUser(userId: number): Observable<any> {
     return this.http.put(`${API_DEACTIVATE_USER}/${userId}`, {});
   }

@@ -6,9 +6,10 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { UsersComponent } from './components/users/users.component';
 import { AdminPostsComponent } from './components/admin-posts/admin-posts.component';
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 import { HOME_PATH, LOGIN_PATH, REGISTRATION_PATH, 
-  ADMIN_USERS_PATH, ADMIN_POSTS_PATH, MY_PROFILE_PATH 
+  ADMIN_USERS_PATH, ADMIN_POSTS_PATH, MY_PROFILE_PATH, PROFILES_PATH_PARAMS
 } from './config/router-paths';
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: ADMIN_USERS_PATH, component: UsersComponent },
   { path: ADMIN_POSTS_PATH, component: AdminPostsComponent },
   { path: MY_PROFILE_PATH, component: ProfileSettingsComponent },
+  { path: PROFILES_PATH_PARAMS, component: ProfilePageComponent },
 ];
 
 @NgModule({
