@@ -1,3 +1,4 @@
+import { PostService } from './../../services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  posts: Array<any> = [];
+
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
+    this.getAllPosts();
   }
 
+  getAllPosts() {
+    this.postService.getAllPosts().subscribe(data => {
+      this.posts = data;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  onLikeClick(postId: number) {
+    // @TODO: implement this
+    console.log("LIKE " + postId);
+  }
+
+  onDislikeClick(postId: number) {
+    // @TODO: implement this
+    console.log("DISLIKE " + postId);
+  }
+
+  onCommentClick(postId: number) {
+    // @TODO: implement this
+    console.log("COMMENT " + postId);
+  }
 }
