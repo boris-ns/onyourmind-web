@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    max-width: 600px;
+    min-width: 600px;
+    width: 400px;
+    margin: 10px;
+}
+
+.card .card-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-actions button span {
+    margin-left: 5px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.comment-input {
+    width: 600px;
+}
+
+textarea {
+    height: 80px;
+}

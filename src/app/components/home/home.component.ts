@@ -1,4 +1,4 @@
-import { ADD_POST_PATH } from './../../config/router-paths';
+import { ADD_POST_PATH, POSTS_PATH } from './../../config/router-paths';
 import { PostService } from './../../services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -45,8 +45,7 @@ export class HomeComponent implements OnInit {
   }
 
   onCommentClick(postId: number): void {
-    // @TODO: implement this
-    console.log("COMMENT " + postId);
+    this.router.navigate([POSTS_PATH, postId]);
   }
 
   onClickBtnAddPost(): void {

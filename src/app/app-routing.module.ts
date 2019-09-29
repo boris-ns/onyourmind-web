@@ -8,10 +8,11 @@ import { AdminPostsComponent } from './components/admin-posts/admin-posts.compon
 import { ProfileSettingsComponent } from './components/profile-settings/profile-settings.component';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import { PostPageComponent } from './components/post-page/post-page.component';
 
 import { HOME_PATH, LOGIN_PATH, REGISTRATION_PATH, 
   ADMIN_USERS_PATH, ADMIN_POSTS_PATH, MY_PROFILE_PATH, PROFILES_PATH_PARAMS,
-  ADD_POST_PATH,
+  ADD_POST_PATH, POSTS_PATH_PARAMS,
 } from './config/router-paths';
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: MY_PROFILE_PATH, component: ProfileSettingsComponent },
   { path: PROFILES_PATH_PARAMS, component: ProfilePageComponent },
   { path: ADD_POST_PATH, component: AddPostComponent },
+  { path: POSTS_PATH_PARAMS, component: PostPageComponent },
 ];
 
 @NgModule({
