@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    margin: 5px;
+}
+
+.post-input {
+    width: 50%;
+}
+
+textarea {
+    height: 300px;
+}

@@ -1,4 +1,4 @@
-import { API_ALL_POSTS, API_DEACTIVATE_POST, API_ACTIVATE_POST } from './../config/api-paths';
+import { API_ALL_POSTS, API_DEACTIVATE_POST, API_ACTIVATE_POST, API_POSTS } from './../config/api-paths';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -21,5 +21,13 @@ export class PostService {
 
   activatePost(postId): Observable<any> {
     return this.http.put(`${API_ACTIVATE_POST}/${postId}`, {});
+  }
+  
+  addPost(postText: string): Observable<any> {
+    const payload = {
+      text: postText
+    };
+
+    return this.http.post(API_POSTS, payload);
   }
 }

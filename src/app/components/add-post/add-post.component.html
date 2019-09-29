@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Add new post</h2>
+
+    <mat-form-field class="post-input">
+        <textarea matInput placeholder="Post text" [(ngModel)]="postText"></textarea>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button mat-raised-button (click)="onClickCancel()">
+            Cancel
+        </button>
+    
+        <button mat-raised-button color="primary" (click)="onClickAddPost()">
+            <mat-icon>add</mat-icon>
+            <span>Add post</span>
+        </button>
+    </div>
+</div>

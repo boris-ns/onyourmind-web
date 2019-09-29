@@ -8,3 +8,4 @@ export const ADMIN_COMMENTS_PATH = 'admin/comments';
 export const MY_PROFILE_PATH = 'profile-settings';
 export const PROFILES_PATH = 'profile';
 export const PROFILES_PATH_PARAMS = 'profile/:id';
+export const ADD_POST_PATH = 'add-post';

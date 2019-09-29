@@ -1,5 +1,18 @@
 <div class="container">
 
+    <h2>All posts</h2>
+
+    <ng-template [ngIf]="isUserLoggedIn()">
+        <button mat-raised-button color="primary" (click)="onClickBtnAddPost()">
+            <mat-icon>add</mat-icon>
+            <span>Add post</span>
+        </button>
+    </ng-template>
+
+    <ng-template [ngIf]="posts.length === 0">
+        <h3>Sorry, currently there are no posts :(</h3>
+    </ng-template>
+
     <mat-card *ngFor="let post of posts" class="card">
         <mat-card-header>
             <div mat-card-avatar>
@@ -18,22 +31,24 @@
             <p>{{post.text}}</p>
         </mat-card-content>
 
-        <mat-card-actions class="card-actions">
-            <button mat-button (click)="onLikeClick(post.id)">
-                <mat-icon>thumb_up</mat-icon>
-                <span>Like ({{post.likes}})</span>
-            </button>
-            
-            <button mat-button (click)="onCommentClick(post.id)">
-                <mat-icon>comment</mat-icon>
-                <span>Comment</span>
-            </button>
-            
-            <button mat-button (click)="onDislikeClick(post.id)">
-                <mat-icon>thumb_down</mat-icon>
-                <span>Dislike ({{post.dislikes}})</span>
-            </button>
-        </mat-card-actions>
+        <ng-template [ngIf]="isUserLoggedIn()">
+            <mat-card-actions class="card-actions">
+                <button mat-button (click)="onLikeClick(post.id)">
+                    <mat-icon>thumb_up</mat-icon>
+                    <span>Like ({{post.likes}})</span>
+                </button>
+                
+                <button mat-button (click)="onCommentClick(post.id)">
+                    <mat-icon>comment</mat-icon>
+                    <span>Comment</span>
+                </button>
+                
+                <button mat-button (click)="onDislikeClick(post.id)">
+                    <mat-icon>thumb_down</mat-icon>
+                    <span>Dislike ({{post.dislikes}})</span>
+                </button>
+            </mat-card-actions>
+        </ng-template>
     </mat-card>
 
 </div>

@@ -8,6 +8,7 @@ export const API_REGISTER_ADMIN = API_BASE + '/api/users/add-admin';
 export const API_DEACTIVATE_USER = API_BASE + "/api/users/deactivate";
 export const API_ACTIVATE_USER = API_BASE + "/api/users/activate";
 
+export const API_POSTS = API_BASE + '/api/posts';
 export const API_ALL_POSTS = API_BASE + '/api/posts/public';
 export const API_DEACTIVATE_POST = API_BASE + '/api/posts/deactivate';
 export const API_ACTIVATE_POST = API_BASE + '/api/posts/activate';
