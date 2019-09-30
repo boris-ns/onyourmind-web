@@ -1,4 +1,4 @@
-import { API_ALL_POSTS, API_DEACTIVATE_POST, API_ACTIVATE_POST, API_POSTS } from './../config/api-paths';
+import { API_ALL_POSTS, API_DEACTIVATE_POST, API_ACTIVATE_POST, API_POSTS, API_COMMENTS } from './../config/api-paths';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -33,5 +33,14 @@ export class PostService {
     };
 
     return this.http.post(API_POSTS, payload);
+  }
+
+  addComment(postId: number, commentText: string): Observable<any> {
+    const payload = {
+      text: commentText,
+      postId: postId
+    }
+
+    return this.http.post(API_COMMENTS, payload);
   }
 }

@@ -12,3 +12,5 @@ export const API_POSTS = API_BASE + '/api/posts';
 export const API_ALL_POSTS = API_BASE + '/api/posts/public';
 export const API_DEACTIVATE_POST = API_BASE + '/api/posts/deactivate';
 export const API_ACTIVATE_POST = API_BASE + '/api/posts/activate';
+
+export const API_COMMENTS = API_BASE + '/api/comments';

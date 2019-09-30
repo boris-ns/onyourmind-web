@@ -40,12 +40,12 @@
     
             <mat-card-content>
                 <mat-form-field class="comment-input">
-                    <textarea matInput placeholder="Your comment..."></textarea>
+                    <textarea matInput placeholder="Your comment..." [(ngModel)]="commentText"></textarea>
                 </mat-form-field>
     
                 <br />
                 
-                <button mat-raised-button>
+                <button mat-raised-button (click)="onAddCommentClick()">
                     <mat-icon>add</mat-icon>
                     <span>Add comment</span>
                 </button>
