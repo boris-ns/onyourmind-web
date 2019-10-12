@@ -22,3 +22,7 @@ For application to properly work you'll need to run backend service that is loca
 Regular users are ```john.doe``` and ```jack.smith```.  
 Admin is ```jane.doe```.  
 All passwords are ```123```.  
+
+## Screenshots
+
+You can find screenshots from this application in folder named ```screenshots```.  
