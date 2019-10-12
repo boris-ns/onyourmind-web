@@ -49,7 +49,11 @@
         <ng-container matColumnDef="see-profile">
             <th mat-header-cell *matHeaderCellDef> Go to profile </th>
             <td mat-cell *matCellDef="let user">
-                <button mat-button (click)="goToUsersProfile(user.id)">
+                <button 
+                    mat-button 
+                    (click)="goToUsersProfile(user.id)"
+                    matTooltip="Opens up a new page with user's profile"
+                >
                     <span>Go to</span>
                     <mat-icon>arrow_forward</mat-icon>                    
                 </button>

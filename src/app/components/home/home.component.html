@@ -3,7 +3,11 @@
     <h2>All posts</h2>
 
     <ng-template [ngIf]="isUserLoggedIn()">
-        <button mat-raised-button color="primary" (click)="onClickBtnAddPost()">
+        <button 
+            mat-raised-button color="primary" 
+            (click)="onClickBtnAddPost()"
+            matTooltip="Opens up a new page where you can add a new post"
+        >
             <mat-icon>add</mat-icon>
             <span>Add post</span>
         </button>
@@ -37,24 +41,40 @@
 
         <mat-card-actions class="card-actions">
             <ng-template [ngIf]="isUserLoggedIn()" [ngIfElse]="elseButtons">
-                <button mat-button (click)="onLikeClick(post.id)">
+                <button 
+                    mat-button 
+                    (click)="onLikeClick(post.id)"
+                    matTooltip="Like this post"
+                >
                     <mat-icon>thumb_up</mat-icon>
                     <span>Like ({{post.likes}})</span>
                 </button>
                 
-                <button mat-button (click)="onCommentClick(post.id)">
+                <button 
+                    mat-button 
+                    (click)="onCommentClick(post.id)"
+                    matTooltip="Opens up a new page where you can post a comment"    
+                >
                     <mat-icon>comment</mat-icon>
                     <span>Comment</span>
                 </button>
                 
-                <button mat-button (click)="onDislikeClick(post.id)">
+                <button 
+                    mat-button 
+                    (click)="onDislikeClick(post.id)"
+                    matTooltip="Dislike this post"
+                >
                     <mat-icon>thumb_down</mat-icon>
                     <span>Dislike ({{post.dislikes}})</span>
                 </button>
             </ng-template>
             
             <ng-template #elseButtons>
-                <button mat-button (click)="onCommentClick(post.id)">
+                <button 
+                    mat-button 
+                    (click)="onCommentClick(post.id)"
+                    matTooltip="Opens up a new page where you can see all comments for this post"
+                >
                     <mat-icon>comment</mat-icon>
                     <span>See comments</span>
                 </button>
