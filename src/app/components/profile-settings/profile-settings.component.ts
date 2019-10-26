@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ProfileSettingsComponent implements OnInit {
   
   // @TODO: refactor this
-  user: User = new User('', '', '', '', '', []);
+  user: User = new User('', '', '', '', '', '', []);
 
   password: string = '';
   repeatPassword: string = '';

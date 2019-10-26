@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ProfilePageComponent implements OnInit {
 
   // @TODO: Refactor this
-  user: User = new User('', '', '', '', '', []);
+  user: User = new User('', '', '', '', '', '', []);
 
   private userId: number;
 

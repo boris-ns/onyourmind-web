@@ -5,6 +5,7 @@ export class User {
                 public lastName: string,
                 public password: string, 
                 public email: string,
+                public profileImagePath: string,
                 public authorities: string[]) {
 
     }
